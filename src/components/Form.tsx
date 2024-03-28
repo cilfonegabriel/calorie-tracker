@@ -6,18 +6,32 @@ export default function Form() {
         className="space-y-5 bg-white shadow p-10 rounded-lg"
     >
         <div className="grid grid-cols-1 gap-3">
-            <label htmlFor="category">Categorías</label>
+            <label htmlFor="category" className="font-bold">Categorías</label>
             <select
                 className="border border-slate-300 p-2 rounded-lg w-full bg-white"
                 id="category"
             >   
                 {categories.map(category => (
-                    <option>
+                    <option
+                        key={category.id}
+                        value={category.id}
+                    >
                         {category.name}
                     </option>
                 ))}
             </select>
         </div>
+
+        <div className="grid grid-cols-1 gap-3">
+            <label htmlFor="activity" className="font-bold">Actividad:</label>
+            <input 
+                id="activity"
+                type="text"
+                className="border border-slate-300 p-2 rounded-lg"
+                placeholder="Ej. Comida, Jugo de Naranja, Ensalada, Ejercicio, Pesas"
+            />
+        </div>
+
     </form>
   )
 }
