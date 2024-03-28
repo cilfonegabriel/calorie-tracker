@@ -32,6 +32,16 @@ export default function Form() {
             />
         </div>
 
+        <div className="grid grid-cols-1 gap-3">
+            <label htmlFor="calories" className="font-bold">Calorias:</label>
+            <input 
+                id="calories"
+                type="number"
+                className="border border-slate-300 p-2 rounded-lg"
+                placeholder="Ej. Calorias, 300 o 500"
+            />
+        </div>
+
     </form>
   )
 }
