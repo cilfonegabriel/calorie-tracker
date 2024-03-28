@@ -1,3 +1,4 @@
+import { categories } from "../data/categories"
 
 export default function Form() {
   return (
@@ -10,7 +11,11 @@ export default function Form() {
                 className="border border-slate-300 p-2 rounded-lg w-full bg-white"
                 id="category"
             >   
-
+                {categories.map(category => (
+                    <option>
+                        {category.name}
+                    </option>
+                ))}
             </select>
         </div>
     </form>
