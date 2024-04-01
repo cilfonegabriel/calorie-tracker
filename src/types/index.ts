@@ -3,7 +3,7 @@ export type Category = {
     name: string
 }
 
-export type Activities = {
+export type Activity = {
     category: number,
     name: string,
     calories: number,
