@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { categories } from "../data/categories"
+import { validateHeaderValue } from "http"
 
 export default function Form() {
 
@@ -8,6 +9,13 @@ export default function Form() {
         name:'',
         calories: 0
     })
+
+    const handleChange = (e) => {
+        setActivity({
+            ...activity,
+            [e.target.id]: e.target.value
+        })
+    }
 
   return (
     <form
@@ -19,6 +27,7 @@ export default function Form() {
                 className="border border-slate-300 p-2 rounded-lg w-full bg-white"
                 id="category"
                 value={activity.category}
+                onChange={handleChange}
             >   
                 {categories.map(category => (
                     <option
@@ -39,6 +48,7 @@ export default function Form() {
                 className="border border-slate-300 p-2 rounded-lg"
                 placeholder="Ej. Comida, Jugo de Naranja, Ensalada, Ejercicio, Pesas"
                 value={activity.name}
+                onChange={handleChange}
             />
         </div>
 
@@ -50,6 +60,7 @@ export default function Form() {
                 className="border border-slate-300 p-2 rounded-lg"
                 placeholder="Ej. Calorias, 300 o 500"
                 value={activity.calories}
+                onChange={handleChange}
             />
         </div>
 
