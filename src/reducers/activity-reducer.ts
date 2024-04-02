@@ -22,4 +22,5 @@ export const activityReducer = (
     if(action.type === "save-activity") {
       console.log("Desade action type")
     }
+    return state
 }
