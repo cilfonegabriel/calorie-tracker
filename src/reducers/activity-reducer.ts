@@ -20,7 +20,10 @@ export const activityReducer = (
     action: ActivityActions
   ) => {
     if(action.type === "save-activity") {
-      console.log("Desade action type")
+      return {
+        ...state,
+        activities : [...state.activities, action.payload.newActivity]
+      }
     }
     return state
 }
