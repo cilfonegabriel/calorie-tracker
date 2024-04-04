@@ -22,7 +22,8 @@ export default function Form({dispatch, state} : FormProps) {
 
     useEffect(() => {
         if(state.activeId) {
-            console.log("Ya hay algo en ActiveId")
+            const selectedActivity = state.activities.filter(stateActivity => stateActivity.id === state.activeId) [0]
+            setActivity(selectedActivity)
         }
     }, [state.activeId])
 
