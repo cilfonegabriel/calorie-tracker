@@ -1,4 +1,6 @@
 import { Activity } from "../types"
+import { categories } from "../data/categories"
+import { useMemo } from "react"
 
 type ActivityListProps = {
     activities: Activity[],
@@ -6,6 +8,10 @@ type ActivityListProps = {
 }
 
 export default function ActivityList({activities} : ActivityListProps){
+
+    const categoryName = useMemo(() => 
+        (category : Activity['category']) =>  categories.map(cat => cat.id === category ? cat.name : '')
+        , [activities])
     
     return (
         <>
@@ -14,8 +20,8 @@ export default function ActivityList({activities} : ActivityListProps){
             {activities.map(activity => (
                 <div key={activity.id} className="px-5 py-10 bg-white mt-5 flex justify-between">
                     <div className="space-y-2 relative">
-                        <p>
-                            {activity.category}
+                        <p className={}>
+                            {categoryName(+activity.category)}
                         </p>
 
                         <p className="text-2xl font-bold pt-5">
