@@ -31,5 +31,6 @@ export const activityReducer = (
         activeId: action.payload.id
       }
     }
-    return state
+
+  return state
 }
