@@ -27,8 +27,7 @@ export default function Form({dispatch, state} : FormProps) {
         }
     }, [state.activeId])
 
-    const handleChange = (e: ChangeEvent<HTMLSelectElement> | ChangeEvent<HTMLInputElement>
-        ) => {
+    const handleChange = (e: ChangeEvent<HTMLSelectElement> | ChangeEvent<HTMLInputElement>) => {
         const isNumberField = ['category', 'calories'].includes(e.target.id)
 
         setActivity({
@@ -47,12 +46,12 @@ export default function Form({dispatch, state} : FormProps) {
         e.preventDefault()
         dispatch({type: "save-activity", payload: {newActivity: activity}})
     
-
         setActivity ({
             ...initialState,
             id: uuidv4(),
         })
     }
+    
 
   return (
     <form
